@@ -8,3 +8,32 @@
 //
 //
 // Your code here
+
+const Kue = require('./Kue')
+
+class Coklat extends Kue{
+    constructor(){
+        super()
+        this._done = 20
+    }
+}
+
+class Kacang extends Kue{
+    constructor(){
+        super()
+        this._done = 30
+    }
+}
+
+class Keju extends Kue{
+    constructor(){
+        super()
+        this._done = 35
+    }
+}
+
+module.exports ={
+    Coklat: Coklat,
+    Kacang: Kacang,
+    Keju: Keju
+}
