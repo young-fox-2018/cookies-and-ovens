@@ -6,9 +6,9 @@ const PeanutCake = require('./PeanutCake')
 const Oven = require('./Oven')
 
 
-let cheeseCake = new CheeseCake('cheese cake', 30)
+let cheeseCake = new CheeseCake('cheese cake', 20)
 let appleCake = new AppleCake('apple cake', 40)
-let peanutCake = new PeanutCake('peanut cake', 50)
+let peanutCake = new PeanutCake('peanut cake', 30)
 
 console.log(Oven.bake(cheeseCake, 50))
 console.log(Oven.bake(appleCake, 50))
