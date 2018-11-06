@@ -2,7 +2,7 @@ class Cookie {
     constructor(name, time){
         this._name = name,
         this._cook_time = time,
-        this._status = 'mentah'
+        this._status = 'dough'
     }
 
     set status(status) {
