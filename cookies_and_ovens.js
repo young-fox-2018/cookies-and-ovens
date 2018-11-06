@@ -15,31 +15,32 @@ class Cookies {
     }
 }
 
-class Microwave{
+class Microwave {
     constructor(name) {
         this.name = name
     }
 
-    static cook(cookie){
+    static cook(cookie, cookDuration) {
         console.log(`Progress ${this.name}`);
-        
-        for (let i = 0; i < cookie.duration+10; i+=5) {
-            if (i < 20) {
-                console.log(
-                    `${cookie.namaKue}, menit ke ${i} : Mentah`
-                );
-            } else if (i == 20) {
-                console.log(
-                    `${cookie.namaKue}, menit ke ${i} : Mateng`
-                );
-            } else if (i == 15) {
-                console.log(
-                    `${cookie.namaKue}, menit ke ${i} : Hampir Mateng`
-                );
-            } else if (i > 20) {
-                console.log(
-                    `${cookie.namaKue}, menit ke ${i} : Goshongg`
-                );
+        for (let j = 0; j < cookie.length; j++) {
+            for (let i = 0; i < cookDuration; i += 5) {
+                if (i < cookie[j].duration-10) {
+                    console.log(
+                        `${cookie[j].namaKue}, menit ke ${i} : Mentah`
+                    );
+                } else if (i == cookie[j].duration) {
+                    console.log(
+                        `${cookie[j].namaKue}, menit ke ${i} : Mateng`
+                    );
+                } else if (i == cookie[j].duration-5) {
+                    console.log(
+                        `${cookie[j].namaKue}, menit ke ${i} : Hampir Mateng`
+                    );
+                } else if (i > cookie[j].duration) {
+                    console.log(
+                        `${cookie[j].namaKue}, menit ke ${i} : Goshongg`
+                    );
+                }
             }
         }
     }
@@ -48,10 +49,9 @@ class Microwave{
 let kueCoklat = new Cookies("kue coklat", 20)
 let kueKacang = new Cookies("kue kacang", 30)
 let kueKeju = new Cookies("kue keju", 40)
+let arrKue = [kueCoklat, kueKacang, kueKeju]
+Microwave.cook(arrKue, 30)
 
-let kue_coklat = Microwave.cook(kueCoklat)
-let kue_Kacang = Microwave.cook(kueKacang)
-let kue_keju = Microwave.cook(kueKeju)
 
 
 
