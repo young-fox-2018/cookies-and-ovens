@@ -1,10 +1,15 @@
-// Answer These Questions:
-//
-// - What are essential classes?
-// - What attributes will each class have?
-// - What interface will each class provide?
-// - How will the classes interact with each other?
-// - Which classes will inherit from others, if any?
-//
-//
-// Your code here
+'use strict'
+
+const CheeseCake = require('./CheeseCake')
+const AppleCake = require('./AppleCake')
+const PeanutCake = require('./PeanutCake')
+const Oven = require('./Oven')
+
+
+let cheeseCake = new CheeseCake('cheese cake', 30)
+let appleCake = new AppleCake('apple cake', 40)
+let peanutCake = new PeanutCake('peanut cake', 50)
+
+console.log(Oven.bake(cheeseCake, 50))
+console.log(Oven.bake(appleCake, 50))
+console.log(Oven.bake(peanutCake, 50))
