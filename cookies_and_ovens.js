@@ -8,3 +8,14 @@
 //
 //
 // Your code here
+
+const Kacang = require('./kacang')
+const Coklat = require('./coklat')
+const Keju = require('./keju')
+const Oven = require('./oven')
+
+let KueKacang = new Kacang('kacang')
+let KueCoklat = new Coklat('coklat')
+let KueKeju = new Keju('keju')
+let arr = [KueKacang, KueCoklat, KueKeju]
+Oven.bake(arr, 35)
