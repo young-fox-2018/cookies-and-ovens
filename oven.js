@@ -2,7 +2,7 @@
 
 class Oven {
   static bake(cookie , time) {
-    console.log(`Progress of ${this.name}`)
+    console.log(`Progress of ${cookie._name}`)
     
     for (let i = 0; i <= time; i+= 5) {
       if (i > cookie._cookedTime ) {
