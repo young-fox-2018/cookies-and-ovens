@@ -8,3 +8,15 @@
 //
 //
 // Your code here
+const Oven = require('./Oven.js');
+const Chocolate = require('./Chocolate.js');
+const Oatmeal = require('./Oatmeal.js');
+const Peanut = require('./Peanut.js');
+
+const choco = new Chocolate('Chocolate Cookie');
+const oatmeal = new Oatmeal('Oatmeal Cookie');
+const peanut = new Peanut('Peanut Butter Cookie');
+
+Oven.bake(choco, 25);
+Oven.bake(oatmeal, 15);
+Oven.bake(peanut, 20);
