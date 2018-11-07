@@ -9,66 +9,61 @@
 //
 // Your code here
 
-
 class Oven {
-    constructor() {
-        this.tray = []
-    }
-
-    addCookie(cookie) {
-        this.tray.push(cookie)
-    }
-
-    bake(timer) {
-        let time_init = 5
-        while (time_init <= timer ) {
-            this.tray.forEach(cookie => {
-                if (cookie.time - 5 == time_init) {
-                    console.log(`Kue ${cookie.constructor.name}, menit ke ${time_init} : hampir matang`)
-                }
-                else if (time_init < cookie.time) { 
-                    console.log(`Kue ${cookie.constructor.name}, menit ke ${time_init} : mentah`)
-                } 
-                else if (cookie.time == time_init) {
-                    console.log(`Kue ${cookie.constructor.name}, menit ke ${time_init} : matang`)
-                } else { // gosong
-                    console.log(`Kue ${cookie.constructor.name}, menit ke ${time_init} : hangus`)
-                }
-            });
-            time_init += 5
+    static bake(cake, time){
+        for (let i = 0 ; i <= time; i+= 5) {
+            if (i === cake.done) {
+                cake.status = 'MATANG'
+            }
+            else if(i > cake._done){
+                cake.status = "HANGUS"
+            }
+            console.log(`Kue ${cake.constructor.name}, menit ke ${i} : ${cake.status}`)
         }
+    }
+}
 
+class Cake{
+    constructor(){
+        this._status = 'MENTAH'
+    }
+
+    get done(){
+        return this._done
+    }
+
+    get status(){
+        return this._status
+    }
+    set status(input){
+        this._status = input
     }
 
 }
 
-
-class Cookie {
-    constructor (time) {
-        this.status = 'mentah'
-        this.time = time || null
-    }
-}
-class Cokelat extends Cookie {
-    constructor() {
-        super(20)
-    }
-}
-class Keju extends Cookie {
-    constructor() {
-        super(30)
-    }
-}
-class Kacang extends Cookie {
-    constructor() {
-        super(40)
+class Coklat extends Cake{
+    constructor(){
+        super()
+        this._done = 20
     }
 }
 
-let oven = new Oven()
-let cokelat = new Cokelat()
-let keju = new Keju()
+class Kacang extends Cake{
+    constructor(){
+        super()
+        this._done = 30
+    }
+}
 
-//oven.addCookie(cokelat)
-oven.addCookie(keju)
-oven.bake(30)
+class Keju extends Cake{
+    constructor(){
+        super()
+        this._done = 35
+    }
+}
+
+Oven.bake(new Coklat(), 15)
+console.log("=================================")
+Oven.bake(new Kacang(), 30)
+console.log("=================================")
+Oven.bake(new Keju(), 40)
