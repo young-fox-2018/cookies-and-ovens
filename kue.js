@@ -34,26 +34,6 @@ class Kue {
     set status(input) {
         this._status = input
     }
-    bake(limit) {
-        for (let i = 0; i <= limit; i += 5) {
-            let result = `Kue ${this.name}, menit ke ${i} :`
-            if (i < this.hampir) {
-                this.status = 'mentah'
-                result += `${this.status}`
-            } else if (i >= this.hampir && i < this.matang) {
-                this.status = 'hampir matang'
-                result += `${this.status}`
-            } else if (i >= this.matang && i < this.hangus) {
-                this.status = 'matang'
-                result += `${this.status}`
-            } else {
-                this.status = 'hangus'
-                result += `${this.status}`
-            }
-            console.log(result)
-        }
-
-    }
 }
 
 
